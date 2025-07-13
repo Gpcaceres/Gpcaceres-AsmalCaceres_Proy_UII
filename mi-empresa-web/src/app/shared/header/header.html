@@ -1,0 +1,36 @@
+<header class="header-futuristic">
+  <div class="logo-container" 
+       (mouseenter)="logoHover=true" 
+       (mouseleave)="logoHover=false" 
+       tabindex="0" 
+       role="img" 
+       aria-label="TutoCode">
+    <svg 
+      class="logo-svg" 
+      [class.animate]="logoHover" 
+      viewBox="0 0 64 64" 
+      width="48" height="48" 
+      xmlns="http://www.w3.org/2000/svg" 
+      aria-hidden="true" 
+      focusable="false" >
+      <rect x="8" y="16" width="48" height="32" rx="6" ry="6" fill="none" stroke="#00bfff" stroke-width="3"/>
+      <rect x="16" y="24" width="32" height="16" rx="3" ry="3" fill="#00bfff" opacity="0.25"/>
+      <circle cx="32" cy="48" r="4" fill="#00bfff" />
+      <line x1="8" y1="16" x2="56" y2="48" stroke="#00bfff" stroke-width="1" opacity="0.4"/>
+    </svg>
+    <h1 class="brand-name">TutoCode</h1>
+  </div>
+
+  <nav [class.active]="menuOpen" class="nav-futuristic" role="navigation" aria-label="Menú principal">
+    <a routerLink="/inicio" routerLinkActive="active" (click)="closeMenu()" tabindex="0">Inicio</a>
+    <a routerLink="/quienes-somos" routerLinkActive="active" (click)="closeMenu()" tabindex="0">Quiénes Somos</a>
+    <a routerLink="/nuestro-equipo" routerLinkActive="active" (click)="closeMenu()" tabindex="0">Nuestro Equipo</a>
+    <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()" tabindex="0">Contacto</a>
+  </nav>
+
+  <button class="hamburger" aria-label="Menú" (click)="toggleMenu()" type="button" [attr.aria-expanded]="menuOpen">
+    <span [class.open]="menuOpen"></span>
+    <span [class.open]="menuOpen"></span>
+    <span [class.open]="menuOpen"></span>
+  </button>
+</header>

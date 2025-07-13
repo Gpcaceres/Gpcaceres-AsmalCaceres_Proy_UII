@@ -1,0 +1,104 @@
+:root {
+  --primary-gradient: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  --accent-color: #00ffe7;
+  --white-color: #f5f5f5;
+  --footer-bg: #111827;
+  --link-hover-glow: #00ffe7;
+  --transition-speed: 0.3s;
+}
+
+.footer {
+  background: var(--primary-gradient);
+  color: var(--white-color);
+  padding: 2rem 5%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -4px 15px rgba(0, 255, 231, 0.2);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.footer-copy {
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--white-color); /* Asegura que sea blanco */
+  text-shadow: 0 0 5px rgba(0, 255, 231, 0.4);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color); /* ← Blanco */
+  font-weight: 600;
+  font-size: 1.25rem;
+  position: relative;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  transition:
+    color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    transform 0.4s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.social-link svg {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+  transition: filter var(--transition-speed);
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--accent-color);
+  box-shadow:
+    0 0 8px var(--link-hover-glow),
+    0 0 20px var(--link-hover-glow),
+    0 0 30px var(--link-hover-glow);
+  transform: scale(1.2) rotate(10deg);
+  outline: none;
+}
+
+.social-link:hover svg,
+.social-link:focus svg {
+  filter: drop-shadow(0 0 6px var(--link-hover-glow));
+}
+
+/* Futuristic animated background shape */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 300%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 255, 231, 0.15), transparent 60%);
+  transform: translateX(-50%) rotate(45deg);
+  animation: pulseGlow 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(-50%) rotate(45deg) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) rotate(45deg) scale(1.1);
+  }
+}

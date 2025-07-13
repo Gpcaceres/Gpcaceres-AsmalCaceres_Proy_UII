@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+  /* Variables de colores y efectos de inicio.css (asegúrate de que estén definidas globalmente) */
+  --primary: #005f9f;
+  --secondary: #003cb3;
+  --bg: #0a0f29;
+  --white: #ffffff;
+  --glow: #00aaff;
+
+  /* Variables específicas para esta sección, ajustadas para combinar */
+  --team-container-bg: var(--bg);
+  --team-card-bg-start: #161e3d;
+  --team-card-bg-end: var(--secondary);
+  --team-text-color: var(--white);
+  --team-glow-shadow-soft: rgba(0, 170, 255, 0.2);
+  --team-glow-shadow-medium: rgba(0, 170, 255, 0.4);
+  --team-border-color: var(--glow);
+  --team-accent-border: var(--primary);
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Orbitron', monospace;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+.team-container {
+  max-width: 720px; /* Reducido de 900px (900 * 0.8) */
+  margin: 3.2rem auto; /* Reducido de 4rem (4 * 0.8) */
+  padding: 2.4rem 2rem; /* Reducido de 3rem y 2.5rem */
+  background: rgba(10, 15, 41, 0.9);
+  border-radius: 19.2px; /* Reducido de 24px (24 * 0.8) */
+  box-shadow: 0 0 20px var(--team-glow-shadow-medium); /* Reducido de 25px */
+  border: 0.8px solid var(--team-border-color); /* Reducido de 1px */
+  text-align: center;
+  color: var(--team-text-color);
+  font-family: 'Orbitron', monospace;
+}
+
+.team-container h1 {
+  font-size: 2.24rem; /* Reducido de 2.8rem (2.8 * 0.8) */
+  margin-bottom: 2.4rem; /* Reducido de 3rem (3 * 0.8) */
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.4px; /* Reducido de 3px (3 * 0.8) */
+  text-shadow: 0 0 8px var(--primary), 0 0 16px var(--glow); /* Reducido de 10px y 20px */
+  font-family: 'Orbitron', monospace;
+}
+
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem; /* Reducido de 2rem (2 * 0.8) */
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.team-member {
+  background: linear-gradient(135deg, var(--team-card-bg-start), var(--team-card-bg-end));
+  border-radius: 14.4px; /* Reducido de 18px (18 * 0.8) */
+  box-shadow: 0 0 12px var(--team-glow-shadow-soft); /* Reducido de 15px */
+  border: 0.8px solid rgba(0, 170, 255, 0.3); /* Reducido de 1px */
+  padding: 1.6rem; /* Reducido de 2rem (2 * 0.8) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  color: var(--team-text-color);
+  flex: 0 0 calc(50% - 0.8rem); /* Ajustado para el nuevo gap */
+  @media (min-width: 1024px) {
+    flex: 0 0 calc(33.333% - 1.066rem); /* Ajustado para el nuevo gap */
+  }
+  @media (max-width: 767px) {
+    flex: 0 0 100%;
+  }
+}
+
+.team-member.active {
+  transform: translateY(-6.4px) scale(1.016); /* Reducido de -8px (8 * 0.8) y 1.02 (1 + (0.02 * 0.8)) */
+  box-shadow: 0 0 24px var(--glow), 0 0 40px rgba(0, 170, 255, 0.6); /* Reducido de 30px y 50px */
+  border-color: var(--glow);
+}
+
+.team-member img {
+  width: 160px; /* Reducido de 200px (200 * 0.8) */
+  height: 160px; /* Reducido de 200px (200 * 0.8) */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3.2px solid var(--team-accent-border); /* Reducido de 4px */
+  box-shadow: 0 0 12px rgba(0, 170, 255, 0.7); /* Reducido de 15px */
+  margin-bottom: 0.8rem; /* Reducido de 1rem */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover img {
+  border-color: var(--glow);
+  box-shadow: 0 0 20px var(--glow); /* Reducido de 25px */
+}
+
+.team-member h2 {
+  font-size: 1.28rem; /* Reducido de 1.6rem (1.6 * 0.8) */
+  margin-bottom: 0.32rem; /* Reducido de 0.4rem */
+  color: var(--white);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 4px var(--primary); /* Reducido de 5px */
+}
+
+.team-member h3 {
+  font-size: 0.88rem; /* Reducido de 1.1rem (1.1 * 0.8) */
+  color: var(--glow);
+  font-style: normal;
+  margin-bottom: 0.64rem; /* Reducido de 0.8rem */
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.4px; /* Reducido de 0.5px */
+}
+
+.team-member p {
+  font-size: 0.76rem; /* Reducido de 0.95rem (0.95 * 0.8) */
+  color: var(--white);
+  line-height: 1.6;
+  margin: 0.24rem 0; /* Reducido de 0.3rem */
+  text-align: center;
+}
+
+.team-details {
+  margin-top: 1.2rem; /* Reducido de 1.5rem (1.5 * 0.8) */
+  padding: 0.96rem; /* Reducido de 1.2rem (1.2 * 0.8) */
+  border-top: 0.8px solid rgba(0, 170, 255, 0.2); /* Reducido de 1px */
+  background: rgba(10, 15, 41, 0.4);
+  border-radius: 9.6px; /* Reducido de 12px */
+  font-size: 0.76rem; /* Reducido de 0.95rem (0.95 * 0.8) */
+  color: var(--white);
+  width: 100%;
+  box-shadow: inset 0 0 8px rgba(0, 170, 255, 0.1); /* Reducido de 10px */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .team-container {
+    margin: 1.6rem auto; /* Reducido de 2rem */
+    padding: 1.6rem 1.2rem; /* Reducido de 2rem y 1.5rem */
+    border-radius: 14.4px; /* Reducido de 18px */
+  }
+  .team-container h1 {
+    font-size: 1.76rem; /* Reducido de 2.2rem */
+    margin-bottom: 1.6rem; /* Reducido de 2rem */
+  }
+  .team-member {
+    padding: 1.2rem; /* Reducido de 1.5rem */
+    margin-bottom: 1.2rem; /* Reducido de 1.5rem */
+  }
+  .team-member img {
+    width: 120px; /* Reducido de 150px */
+    height: 120px; /* Reducido de 150px */
+  }
+  .team-member h2 {
+    font-size: 1.12rem; /* Reducido de 1.4rem */
+  }
+  .team-member h3 {
+    font-size: 0.8rem; /* Reducido de 1rem */
+  }
+  .team-member p {
+    font-size: 0.68rem; /* Reducido de 0.85rem */
+  }
+  .team-details {
+    padding: 0.8rem; /* Reducido de 1rem */
+    font-size: 0.68rem; /* Reducido de 0.85rem */
+  }
+}

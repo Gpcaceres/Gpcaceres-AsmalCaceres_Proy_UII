@@ -1,0 +1,232 @@
+:root {
+  --primary: #005f9f;
+  --secondary: #003cb3;
+  --bg: #0a0f29;
+  --white: #ffffff;
+  --glow: #00aaff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+  background: var(--bg);
+}
+
+.background-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: linear-gradient(-45deg, #0a0f29, #081a34, #1b1f33, #0c0e1a);
+  background-size: 400% 400%;
+  animation: waveGradient 15s ease infinite;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@keyframes waveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 81vh; /* Reducido de 90vh (90% de 90vh) */
+  padding: 1.62rem; /* Reducido de 1.8rem (90% de 1.8rem) */
+  gap: 1.62rem; /* Reducido de 1.8rem (90% de 1.8rem) */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-left {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.62rem; /* Reducido de 1.8rem (90% de 1.8rem) */
+  justify-content: center;
+  animation: fadeInLeft 1.5s ease forwards;
+  text-align: center;
+}
+
+.logo-container {
+  margin-top: -24.3px; /* Reducido de -27px (90% de -27px) */
+  display: flex;
+  align-items: center;
+  gap: 0.81rem; /* Reducido de 0.9rem (90% de 0.9rem) */
+  justify-content: center;
+  animation: glow 3s infinite alternate;
+}
+
+.logo-container img {
+  width: 72.9px; /* Reducido de 81px (90% de 81px) */
+  height: 72.9px; /* Reducido de 81px (90% de 81px) */
+  filter: drop-shadow(0 0 8.1px var(--glow)); /* Reducido de 9px (90% de 9px) */
+}
+
+.brand-name {
+  font-size: 3.645rem; /* Reducido de 4.05rem (90% de 4.05rem) */
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 16.2px var(--primary), 0 0 32.4px var(--glow); /* Reducido de 18px, 36px */
+  text-transform: uppercase;
+  text-align: center;
+  animation: bounceZoomIn 2s ease forwards;
+}
+
+.subtitle {
+  font-size: 2.835rem; /* Reducido de 3.15rem (90% de 3.15rem) */
+  color: white;
+  text-align: center;
+  animation: slideFadeIn 2.5s ease forwards;
+}
+
+.description {
+  font-size: 1.134rem; /* Reducido de 1.26rem (90% de 1.26rem) */
+  line-height: 1.7; /* Mantengo el line-height ya que es una proporción, no un tamaño absoluto */
+  max-width: 445.5px; /* Reducido de 495px (90% de 495px) */
+  color: white;
+}
+
+.hero-right {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.swiper-container {
+  width: 64.8%; /* Reducido de 72% (90% de 72%) */
+  max-width: 729px; /* Reducido de 810px (90% de 810px) */
+  height: 364.5px; /* Reducido de 405px (90% de 405px) */
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  background: linear-gradient(135deg, #161e3d, var(--secondary));
+  border-radius: 20.25px; /* Reducido de 22.5px (90% de 22.5px) */
+  box-shadow: 0 0 20.25px #00aaff88; /* Reducido de 22.5px (90% de 22.5px) */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.0162); /* Reducido de 1.018 (90% de la diferencia con 1) */
+  box-shadow: 0 0 40.5px #00ccff; /* Reducido de 45px (90% de 45px) */
+}
+
+.swiper-slide img {
+  width: 81%; /* Reducido de 90% (90% de 90%) */
+  max-width: 243px; /* Reducido de 270px (90% de 270px) */
+  height: 283.5px; /* Reducido de 315px (90% de 315px) */
+  border-radius: 20.25px; /* Reducido de 22.5px (90% de 22.5px) */
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 0 36.45px #00ccff66; /* Reducido de 40.5px (90% de 40.5px) */
+}
+
+.swiper-slide p {
+  margin-top: 0.81rem; /* Reducido de 0.9rem (90% de 0.9rem) */
+  font-size: 1.053rem; /* Reducido de 1.17rem (90% de 1.17rem) */
+  font-weight: bold;
+  color: white;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 40.5px; /* Reducido de 45px (90% de 45px) */
+  height: 40.5px; /* Reducido de 45px (90% de 45px) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12.15px var(--glow); /* Reducido de 13.5px (90% de 13.5px) */
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: 8.1px; /* Reducido de 9px (90% de 9px) */
+}
+
+.swiper-button-next {
+  right: 8.1px; /* Reducido de 9px (90% de 9px) */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 1.215rem; /* Reducido de 1.35rem (90% de 1.35rem) */
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32.4px); } /* Reducido de -36px (90% de -36px) */
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 9.72px var(--primary), 0 0 19.44px var(--glow); /* Reducido de 10.8px, 21.6px */
+    filter: drop-shadow(0 0 8.1px var(--glow)); /* Reducido de 9px */
+  }
+  100% {
+    text-shadow: 0 0 28.35px var(--primary), 0 0 52.65px var(--glow); /* Reducido de 31.5px, 58.5px */
+    filter: drop-shadow(0 0 20.25px var(--glow)); /* Reducido de 22.5px */
+  }
+}
+
+@keyframes bounceZoomIn {
+  0% { opacity: 0; transform: scale(0.243); } /* Reducido de 0.27 (90% de 0.27) */
+  50% { opacity: 1; transform: scale(0.891); } /* Reducido de 0.99 (90% de 0.99) */
+  70% { transform: scale(0.729); } /* Reducido de 0.81 (90% de 0.81) */
+  100% { transform: scale(0.81); } /* Reducido de 0.9 (90% de 0.9) */
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(-32.4px); } /* Reducido de -36px (90% de -36px) */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-left, .hero-right {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .brand-name { font-size: 2.835rem; } /* Reducido de 3.15rem */
+  .subtitle { font-size: 2.025rem; } /* Reducido de 2.25rem */
+  .swiper-container {
+    width: 76.95%; /* Reducido de 85.5% */
+    height: auto;
+  }
+  .swiper-slide {
+    height: auto;
+  }
+}

@@ -1,0 +1,39 @@
+:root {
+  --primary-color: #005f9f;
+  --hover-color: #003cb3;
+  --text-color: #ffffff;
+  --bg-color: linear-gradient(-45deg, #0a0f29, #081a34, #1b1f33, #0c0e1a);
+  --white: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: transparent;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* Fondo animado global */
+.background-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  background: var(--bg-color);
+  background-size: 400% 400%;
+  animation: waveGradient 15s ease infinite;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@keyframes waveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,36 @@
+/* Estilos Globales */
+:root {
+  --primary-color: #0d47a1; /* Azul oscuro */
+  --secondary-color: #1976d2; /* Azul medio */
+  --accent-color: #64b5f6; /* Azul claro */
+  --text-color: #333;
+  --bg-color: #f4f7f9;
+  --white-color: #fff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+main {
+  padding: 2rem 5%;
+  min-height: calc(100vh - 180px); /* Ajusta este valor según la altura de tu header y footer */
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}

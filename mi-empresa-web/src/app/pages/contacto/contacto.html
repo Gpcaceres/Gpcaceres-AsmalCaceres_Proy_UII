@@ -1,0 +1,63 @@
+<section class="contact-container" aria-labelledby="contact-title">
+  <h1 id="contact-title">Contáctanos</h1>
+  <form (ngSubmit)="enviarFormulario()" #form="ngForm" novalidate>
+    
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="nombre"
+        required
+        placeholder="Tu nombre"
+      />
+      <div class="error" *ngIf="form.controls['nombre']?.invalid && form.controls['nombre']?.touched">
+      
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        placeholder="ejemplo@correo.com"
+      />
+      <div class="error" *ngIf="form.controls['email']?.invalid && form.controls['email']?.touched">
+        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        rows="5"
+        [(ngModel)]="mensaje"
+        required
+        placeholder="Tu mensaje..."
+      ></textarea>
+      <div class="error" *ngIf="form.controls['mensaje']?.invalid && form.controls['mensaje']?.touched">
+       
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">
+      Enviar
+    </button>
+  </form>
+
+  <div class="mensaje-gracias" *ngIf="enviado" role="status" aria-live="polite">
+    ¡Gracias! Pronto nos comunicaremos contigo.
+  </div>
+ 
+</section>
+ <p></p>
+  <br>
+  <br>

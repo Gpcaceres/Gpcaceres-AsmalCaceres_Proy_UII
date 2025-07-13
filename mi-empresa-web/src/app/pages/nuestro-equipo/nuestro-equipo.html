@@ -1,0 +1,17 @@
+<section class="team-container">
+  <h1>Nuestro Equipo</h1>
+  <div class="team-grid">
+    <div class="team-member" *ngFor="let miembro of equipo" [class.active]="miembro.expandido">
+      <img [src]="'assets/imagenes/' + miembro.foto" [alt]="miembro.nombre" />
+      <h2 (click)="toggleDetalle(miembro)">{{ miembro.nombre }}</h2>
+      <h3>{{ miembro.rol }}</h3>
+      <p><strong>Tecnologías:</strong> {{ miembro.tecnologias }}</p>
+      <p>{{ miembro.descripcion }}</p>
+
+      <div class="team-details" *ngIf="miembro.expandido">
+        <p><strong>Más información:</strong></p>
+        <p>{{ miembro.detalles }}</p>
+      </div>
+    </div>
+  </div>
+</section>
