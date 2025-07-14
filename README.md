@@ -6,8 +6,8 @@ Asmal Kevin
 
 #Descarga la imagen de Doker con el siguiente comando:
 
-docker pull germancinec/webavzproyecto2u
+docker pull germancinec/webavzproyecto2u:v2
 
 #ejecuta la imagen con: 
 
-docker run -dit -p 8082:80 --name mi-aplicacion-web –rm germancinec/webavzproyecto2u
+docker run -dit -p 8083:80 --name img-proyectou2 --rm img-proyectou2:v2
