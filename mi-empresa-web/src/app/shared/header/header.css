@@ -16,12 +16,8 @@ body {
   color: var(--text-color) !important;
 }
 
-/* =================================== */
-/* HEADER FUTURISTA                    */
-/* =================================== */
 .header-futuristic {
-  /* Changed from 'sticky' to 'relative' or 'static' to remove the overlap effect */
-  position: relative; /* Or 'static' if you don't need it to be positioned relative to itself */
+  position: relative;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -46,9 +42,6 @@ body {
   }
 }
 
-/* =================================== */
-/* LOGO                                */
-/* =================================== */
 .logo-container {
   margin-top: 10px;
   display: flex;
@@ -84,17 +77,11 @@ body {
   text-shadow: none !important;
 }
 
-/* =================================== */
-/* NAVEGACIÓN PRINCIPAL                */
-/* =================================== */
 .nav-futuristic {
   display: flex;
-  /* Reducido el espacio entre elementos para acomodar el movimiento a la derecha */
   gap: 2rem;
   font-weight: 600;
-  /* Eliminado letter-spacing y font-size de aquí para evitar conflictos */
   transition: opacity var(--transition);
-  /* Alinea los elementos a la derecha dentro de su contenedor */
   margin-left: auto;
 }
 
@@ -102,22 +89,17 @@ body {
   color: #ffffff !important;
   text-decoration: none;
   position: relative;
-  /* Reducido el padding vertical */
   padding: 0.2rem 0;
   font-weight: 600;
-  /* **Ajustado aquí el letter-spacing para reducir el espacio entre letras** */
-  letter-spacing: 0.5px; /* Prueba con valores como 0.8px, 0.5px, o incluso 0px si quieres muy pegadas */
-  /* **Ajustado aquí el font-size para reducir el tamaño de las letras** */
-  font-size: 0.85rem; /* Ajustado a un tamaño más pequeño, por ejemplo 0.85rem o 0.9rem */
-  /* **Añadido word-spacing para reducir el espacio entre palabras (si hay más de una palabra en un enlace)** */
-  word-spacing: -1px; /* Puedes experimentar con valores negativos como -0.5px, -1px, -1.5px */
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  word-spacing: -1px;
   transition:
     text-shadow 0.35s ease,
     transform 0.35s ease;
   user-select: none;
   cursor: pointer;
   text-shadow: none !important;
-  /* Añadido un margen a la derecha para empujar más a la derecha (opcional, dependiendo de la distribución) */
   margin-right: 0.5rem;
 }
 
@@ -151,9 +133,6 @@ body {
   width: 100%;
 }
 
-/* =================================== */
-/* BOTÓN HAMBURGUESA RESPONSIVE        */
-/* =================================== */
 .hamburger {
   display: none;
   position: relative;
@@ -198,9 +177,6 @@ body {
   top: 12px;
 }
 
-/* =================================== */
-/* RESPONSIVE MENÚ                     */
-/* =================================== */
 @media (max-width: 900px) {
   .nav-futuristic {
     position: fixed;

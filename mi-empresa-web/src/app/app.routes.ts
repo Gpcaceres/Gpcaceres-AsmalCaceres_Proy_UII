@@ -13,5 +13,5 @@ export const routes: Routes = [
     { path: 'contacto', component: Contacto },
     { path: 'cursos/:id', component: Cursos }, // Ruta para el componente Cursos con parámetro 'id'
     { path: '', redirectTo: '/inicio', pathMatch: 'full' }, // Ruta por defecto
-    { path: '**', redirectTo: '/inicio' } // Ruta para páginas no encontradas
+    { path: '**', redirectTo: '/inicio' } 
 ];
