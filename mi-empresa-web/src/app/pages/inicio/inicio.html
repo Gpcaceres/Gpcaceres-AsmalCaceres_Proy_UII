@@ -18,26 +18,30 @@
     <div class="swiper-container">
       <!-- Contenedor de todas las diapositivas -->
       <div class="swiper-wrapper">
-        <!-- Diapositiva 1 -->
-        <div class="swiper-slide">
+        <!-- Diapositiva 1 - Cursos Interactivos -->
+        <!-- Añadimos routerLink para navegar a la ruta '/cursos/1' al hacer clic -->
+        <div class="swiper-slide" [routerLink]="['/cursos', '1']">
           <!-- Usando ngSrc para optimización de imagen con NgOptimizedImage -->
           <img ngSrc="assets/imagenes/1-removebg-preview.png" alt="Cursos Interactivos" width="300" height="400" />
           <p>Cursos Interactivos</p>
         </div>
-        <!-- Diapositiva 2 -->
-        <div class="swiper-slide">
+        <!-- Diapositiva 2 - Proyectos Reales -->
+        <!-- Añadimos routerLink para navegar a la ruta '/cursos/2' al hacer clic -->
+        <div class="swiper-slide" [routerLink]="['/cursos', '2']">
           <!-- Usando ngSrc para optimización de imagen con NgOptimizedImage -->
           <img ngSrc="assets/imagenes/2-removebg-preview.png" alt="Proyectos Reales" width="300" height="400" />
           <p>Proyectos Reales</p>
         </div>
-        <!-- Diapositiva 3 -->
-        <div class="swiper-slide">
+        <!-- Diapositiva 3 - Mentoría Personalizada -->
+        <!-- Añadimos routerLink para navegar a la ruta '/cursos/3' al hacer clic -->
+        <div class="swiper-slide" [routerLink]="['/cursos', '3']">
           <!-- Usando ngSrc para optimización de imagen con NgOptimizedImage -->
           <img ngSrc="assets/imagenes/3-removebg-preview.png" alt="Mentoría Personalizada" width="300" height="400" />
           <p>Mentoría Personalizada</p>
         </div>
-        <!-- Diapositiva 4 -->
-        <div class="swiper-slide">
+        <!-- Diapositiva 4 - Comunidad Activa -->
+        <!-- Añadimos routerLink para navegar a la ruta '/cursos/4' al hacer clic -->
+        <div class="swiper-slide" [routerLink]="['/cursos', '4']">
           <!-- Usando ngSrc para optimización de imagen con NgOptimizedImage -->
           <img ngSrc="assets/imagenes/4-removebg-preview.png" alt="Comunidad Activa" width="300" height="400" />
           <p>Comunidad Activa</p>

@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Importa RouterModule aquí
 
 import Swiper from 'swiper';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
@@ -8,7 +9,8 @@ import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
   selector: 'app-inicio',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterModule // Agrega RouterModule a los imports
   ],
   templateUrl: './inicio.html',
   styleUrls: ['./inicio.css'],

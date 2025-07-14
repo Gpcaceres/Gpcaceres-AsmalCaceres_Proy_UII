@@ -1,0 +1,128 @@
+/* Definición de variables CSS personalizadas */
+:root {
+  --primary: #005f9f;
+  --secondary: #003cb3;
+  --bg: #0a0f29;
+  --white: #ffffff;
+  --glow: #00aaff;
+}
+
+/* Estilos globales para el cuerpo de la página, tomados de tu CSS */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal de la página, para centrar el contenido verticalmente */
+.container {
+  min-height: calc(100vh - 64px); /* Reducido 20% de 80px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem; /* Reducido 20% de 2rem */
+}
+
+/* Estilos para la tarjeta del curso (div con *ngIf="curso") */
+.course-card {
+    margin-top: -150px; /* Reducido 20% de 12px */
+  background: var(--bg);
+  color: var(--white);
+  box-shadow: 0 0 16px rgba(0, 170, 255, 0.4); /* Reducido 20% de 20px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 480px; /* Reducido 20% de 600px */
+  border-radius: 0.8rem; /* Reducido 20% de 1rem */
+  overflow: hidden; /* <- Evita que contenido se desborde */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: translateY(-5px); /* No se ajusta ya que es un valor de desplazamiento */
+  box-shadow: 0 0 32px var(--glow); /* Reducido 20% de 40px */
+}
+
+/* Contenedor para la imagen del curso */
+.course-image-container {
+  width: 100%;
+  background: #000; /* Fondo negro para la imagen */
+}
+
+/* Estilos para la imagen del curso */
+.course-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Asegura que la imagen completa se vea sin recortar */
+}
+
+/* Estilos para el título del curso dentro de la tarjeta */
+.course-card h2 {
+  color: var(--primary);
+  margin: 1.2rem 0.8rem 0.4rem; /* Reducido 20% de 1.5rem, 1rem, 0.5rem */
+}
+
+/* Estilos para la descripción del curso dentro de la tarjeta */
+.course-card p {
+  color: #555;
+  margin: 0 1.2rem 1.2rem; /* Reducido 20% de 1.5rem */
+  line-height: 1.6; /* No se ajusta ya que es una proporción */
+}
+
+/* Estilos para el botón de inscripción */
+.enroll-button {
+  background: var(--primary) !important;
+  border: none;
+  color: var(--white);
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.6); /* Reducido 20% de 10px */
+  padding: 0.6rem 1.2rem; /* Reducido 20% de 0.75rem, 1.5rem */
+  font-size: 0.88rem; /* Reducido 20% de 1.1rem */
+  margin-bottom: 1.2rem; /* Reducido 20% de 1.5rem */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 9999px; /* No se ajusta ya que es un valor absoluto para redondez máxima */
+}
+
+.enroll-button:hover {
+  background: var(--secondary) !important;
+  transform: translateY(-3px); /* No se ajusta ya que es un valor de desplazamiento */
+  box-shadow: 0 0 20px var(--glow); /* Reducido 20% de 25px */
+}
+
+/* Estilos para el mensaje de carga/error */
+.loading-alert {
+  background: rgba(255, 255, 0, 0.1);
+  border-left: 4px solid var(--glow); /* No se ajusta, es un borde fijo */
+  color: var(--white);
+  max-width: 480px; /* Reducido 20% de 600px */
+  margin: 1.6rem auto; /* Reducido 20% de 2rem */
+  padding: 1.2rem; /* Reducido 20% de 1.5rem */
+  text-align: center;
+  border-radius: 0.4rem; /* Reducido 20% de 0.5rem */
+}
+
+@media (max-width: 768px) {
+  .course-card {
+    max-width: 90%; /* No se ajusta ya que es un porcentaje relativo */
+  }
+
+  .course-card h2 {
+    font-size: 1.2rem; /* Reducido 20% de 1.5rem */
+  }
+
+  .course-card p {
+    font-size: 0.76rem; /* Reducido 20% de 0.95rem */
+  }
+
+  .enroll-button {
+    font-size: 0.8rem; /* Reducido 20% de 1rem */
+    padding: 0.4rem 0.8rem; /* Reducido 20% de 0.5rem, 1rem */
+  }
+}

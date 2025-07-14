@@ -1,0 +1,27 @@
+<div class="container mx-auto p-4">
+  <!-- Agregamos la clase 'course-card' y ajustamos algunas clases de Tailwind para compaginar con el CSS personalizado -->
+  <div *ngIf="curso" class="course-card rounded-lg p-6 mb-8">
+    <!-- Contenedor para la imagen del curso -->
+    <div class="course-image-container mb-6">
+      <!-- Usando ngSrc para optimización de imagen con NgOptimizedImage -->
+      <img ngSrc="../../../assets/imagenes/angular.jpg" alt="Imagen del Curso de Angular" width="600" height="300" class="course-image rounded-lg shadow-md">
+    </div>
+
+    <!-- Los colores del texto se manejarán en el CSS personalizado o se mantendrán por Tailwind si no se especifican -->
+    <h2 class="text-3xl font-bold mb-4">{{ curso.nombre }}</h2>
+    <p class="text-lg">{{ curso.descripcion }}</p>
+    <!-- Aquí puedes añadir más detalles del curso, como módulos, etc. -->
+    <div class="mt-6">
+      <!-- Reemplazamos las clases de color y hover de Tailwind por una clase personalizada 'enroll-button' -->
+      <button class="enroll-button font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+        Inscribirse Ahora
+      </button>
+    </div>
+  </div>
+
+  <!-- Agregamos la clase 'loading-alert' y removemos las clases de color y borde de Tailwind -->
+  <div *ngIf="!curso" class="loading-alert p-4" role="alert">
+    <p class="font-bold">Cargando curso...</p>
+    <p>Si el curso no aparece, es posible que el ID no sea válido o que haya un problema de conexión.</p>
+  </div>
+</div>
